@@ -1,15 +1,10 @@
 const vueLoader = require('vue-loader')
 
 module.exports = {
-	title: 'Vue Styleguidist basic',
-	components: 'src/components/**/[A-Z]*.vue',
-	defaultExample: true,
-	minimize: false,
-	ribbon: {
-		text: 'Back to examples',
-		url: 'https://vue-styleguidist.github.io/Examples.html'
-	},
-	version: '1.1.1',
+  components: [
+    'src/components/Component2/Component2.vue',
+    'src/components/Component3/Component3.vue'
+  ],
 	webpackConfig: {
 		module: {
 			rules: [
@@ -45,23 +40,10 @@ module.exports = {
 							comments: false
 						}
 					}
-				},
-				{
-					test: /\.css$/,
-					use: ['style-loader', 'css-loader']
 				}
 			]
 		},
 
 		plugins: [new vueLoader.VueLoaderPlugin()]
-	},
-	usageMode: 'expand',
-	exampleMode: 'expand',
-	editorConfig: {
-		theme: 'solarized dark'
-	},
-	compilerConfig: {
-		target: { ie: 11 }
-	},
-	styleguideDir: 'dist'
+	}
 }
